@@ -13,6 +13,7 @@ langchain-community = "*"
 langchain-openai = "*"
 langchain-text-splitters = "*"
 jq = "*"
+gunicorn = "*"
 
 [dev-packages]
 
