@@ -57,7 +57,7 @@ llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=1)
 template = """Answer the question based only on the following context:
 {context}
 
-Be precise and to the point using the question answer pairs
+Be precise and to the point using the question answer pairs, returns examples only if available.
 Question: {question}
 
 If you cannot find a relevant answer in the context, respond with: {default_response}
