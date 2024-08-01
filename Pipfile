@@ -8,6 +8,11 @@ python-dotenv = "*"
 flask = "*"
 openai = "*"
 telebot = "*"
+langchain-chroma = "*"
+langchain-community = "*"
+langchain-openai = "*"
+langchain-text-splitters = "*"
+jq = "*"
 
 [dev-packages]
 
