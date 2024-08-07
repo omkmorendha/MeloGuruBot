@@ -52,15 +52,19 @@ bot = TeleBot(BOT_TOKEN, threaded=True)
 
 # Create the retrieval chain
 retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
-llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=1)
+llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0.5)
 
-template = """Answer the question based only on the following context, only reply with the answer:
+template = """
+1. Answer the question based only on the following context, only reply with the answer:
 {context}
 
-Answer precisely from the context and then provide additional information if available. Answer in a friendly, positive, and appreciative tone. 
-Question: {question}
+2. Answer precisely from the context and then provide additional relevantinformation if available. 
+3. Answer in a friendly, positive, and appreciative tone. 
+4. Stay brief and only answer with information relevant to the question
+5. If you cannot find a relevant answer in the context, respond with: {default_response}
 
-If you cannot find a relevant answer in the context, respond with: {default_response}
+Question: 
+{question}
 """
 prompt = ChatPromptTemplate.from_template(template)
 
